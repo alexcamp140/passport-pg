@@ -1,0 +1,22 @@
+extends ../layout.pug 
+
+block content
+    div(class="content d-flex flex-row justify-content-center")
+        form(class="card w-50" method="post" action="/auth/signup")
+            div(class="card-header") Sign up
+            div(class="card-body")
+                div(class="form-group m-2")
+                    label Username
+                    input(class="form-control" type ="text" name="username")
+                div(class="form-group m-2")
+                    label Email
+                    input(class="form-control" type ="email" name="email")
+                div(class="form-group m-2")
+                    label Password
+                    input(class="form-control" type ="password" name="password")
+                if errors
+                    ul(class="my-2")
+                        each error in errors 
+                            li(class="text-danger")=error            
+                div(class="w-100")
+                    input(type="submit" value="Valider" class="btn btn-primary d-block ms-auto m-2")    

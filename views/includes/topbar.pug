@@ -1,0 +1,18 @@
+nav(class="navbar navbar-expand-lg bg-light")
+    div(class="container-fluid")
+        a(class="navbar-brand" href="#") Navbar
+            button(class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation")
+        div(class="" id="navbarNav")
+        ul(class="navbar-nav")
+            li(class="nav-item active")
+                a(class="btn btn-primary btn-tweet me-3" href="/securenav") SecureLink
+            if isAuthenticated
+                li(class="nav-item active")
+                a(class="btn btn-primary btn-tweet me-3" href="/") Home
+                li(class="nav-item active")
+                a(class="nav-link" href="/auth/signout") Déconnexion
+            else    
+                li(class="nav-item")
+                a(class="nav-link" href="/auth/signin/form") Connexion
+                li(class="nav-item")
+                a(class="nav-link" href="/auth/signup/form") Inscription                   
